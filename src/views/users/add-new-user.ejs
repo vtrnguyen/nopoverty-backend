@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add new user</title>
+    <style>
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .submit-btn {
+            margin: 15px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h2>Add new user</h2>
+        <form action="/post-user-CRUD" method="POST">
+            <label for="userID">User's id:</label><br>
+            <input type="text" name="userID"><br>
+
+            <label for="fullName">FullName:</label><br>
+            <input type="text" name="fullName"><br>
+
+            <label for="birthDay">Birthday</label><br>
+            <input type="text" name="birthDay" placeholder="YYYY-MM-DD"><br>
+
+            <label for="address">Address:</label><br>
+            <input type="text" name="address"><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" name="email"><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" name="phone"><br>
+
+            <label for="typeRole">Type role:</label><br>
+            <input type="text" name="typeRole"><br>
+
+            <input class="submit-btn" type="submit">
+        </form>
+    </div> 
+
+</body>
+</html>

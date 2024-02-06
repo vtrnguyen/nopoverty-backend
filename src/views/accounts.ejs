@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>List users</h2>
+    <table>
+        <tr>
+            <th>User's id</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].userID %></td>
+                <td><%= data[i].userName %></td>
+                <td><%= data[i].password %></td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/">HOME</a>    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>List users</h2>
+    <table>
+        <tr>
+            <th>Project's id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Avatar</th>
+            <th>View count</th>
+            <th>Join count</th>
+            <th>Is active?</th>
+            <th>Total fund</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].projectID %></td>
+                <td><%= data[i].title %></td>
+                <td><%= data[i].description %></td>
+                <td><%= data[i].avatar %></td>
+                <td><%= data[i].viewCount %></td>
+                <td><%= data[i].joinCount %></td>
+                <td><%= data[i].isActive %></td>
+                <td><%= data[i].totalFund %></td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/">HOME</a>    
+</body>
+</html>

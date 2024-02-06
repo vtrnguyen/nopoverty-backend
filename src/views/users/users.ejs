@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .action-user {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>List users</h2>
+    <table>
+        <tr>
+            <th>FullName</th>
+            <th>Birthday</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Type role</th>
+            <th>Actions</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].fullName %></td>
+                <td><%= data[i].birthDay %></td>
+                <td><%= data[i].email %></td>
+                <td><%= data[i].address %></td>
+                <td><%= data[i].phone %></td>
+                <td><%= data[i].typeRole %></td>
+                <td>
+                    <button><a href="/edit-user?userID=<%= data[i].userID %>">Edit</a></button>
+                    <button><a href="/delete-user?userID=<%= data[i].userID %>">Delete</a></button>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <div class="action-user">
+        <a href="/">HOME</a>    
+        <a href="/add-new-user">Add new user</a> 
+    </div>   
+</body>
+</html>
