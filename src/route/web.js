@@ -1,5 +1,6 @@
 import express from "express";
-import testController from "../controllers/testController";    
+import testController from "../controllers/testController";
+import apiUserController from "../controllers/apiUserController";
 
 let router = express.Router();
 
@@ -26,6 +27,21 @@ let initWebRoutes = (app) => {
     router.get('/edit-user', testController.getEditUserPage);
     router.post('/put-user-CRUD', testController.putUserCRUD);
     router.get('/delete-user', testController.deleteUserCRUD);
+
+    //API ABOUT USER
+    router.post('/api/user/login', apiUserController.userLogin);
+
+    // * user's information
+    router.get('/api/user/get-user', apiUserController.getUserInfor);
+    router.post('/api/user/create-new-user', apiUserController.createUserInfor);
+    router.put('/api/user/update-user-infor', apiUserController.updateUserInfor);
+    router.delete('/api/user/delete-user-infor', apiUserController.deleteUserInfor);
+
+    // * user's account
+    router.get('/api/user/get-user-account', apiUserController.getUserAccount);
+    router.post('/api/user/create-new-user-account', apiUserController.createUserAccount);
+    router.put('/api/user/update-user-account', apiUserController.updateUserAccount);
+    router.delete('/api/user/delete-user-account', apiUserController.deleteUserAccount);
 
     return app.use("/", router);
 }
